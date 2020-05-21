@@ -1,3 +1,7 @@
-$(el).find('select[name ="genericDropdown"]').change(function (event) {
-    $(this).closest('form').netteAjax(event);
-});
+(function ($) {
+    $.fn.genericDropdown = function (options) {
+        $(this).on('change', function() {
+            $(this).closest('form').netteAjax(event);
+        });
+    }
+})(jQuery);
